@@ -26,3 +26,16 @@ class EuclideanAlgorithm:
             return a
         else:
             return self.gcd_recursive(b, a % b)
+
+    def get_input(prompt):
+        """
+        Prompts the user for input and valides it.
+        """
+        while True:
+            try:
+                value = int(input(prompt))
+                if value < 0:
+                    raise ValueError("Please enter a positive integer.")
+                return value
+            except ValueError as e:
+                print(f"Invalid input: {e}")
